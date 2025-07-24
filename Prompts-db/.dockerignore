@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.DS_Store
+.env
+.git
+.gitignore
+.dockerignore
+.vscode
+dist
+build
+coverage
+.idea
+docker-compose*.yml
+README.md
+docs
+scripts
+unraid-template.xml

@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app/database:/app/database
+      - ./app/uploads:/app/uploads
+      - ./app/thumbnails:/app/thumbnails
+    environment:
+      - DATABASE_PATH=/app/database/database.sqlite
+      - UPLOADS_PATH=/app/uploads
+      - THUMBNAILS_PATH=/app/thumbnails
+      - MAX_FILE_SIZE=10MB
+      - ALLOWED_IMAGE_TYPES=jpg,jpeg,png,webp,gif
+      - JWT_SECRET=your-secret-key
+      - PORT=3000
+      - NODE_ENV=production
+      - CORS_ORIGIN=*
+      - RATE_LIMIT_MAX=100
+    restart: unless-stopped

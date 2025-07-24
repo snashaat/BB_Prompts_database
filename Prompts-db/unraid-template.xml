@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Prompt Management Platform</Name>
+  <Repository>blackboxai/prompt-management-platform</Repository>
+  <Registry>https://github.com/blackboxai/prompt-management-platform</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Support>https://github.com/blackboxai/prompt-management-platform/issues</Support>
+  <Project>https://github.com/blackboxai/prompt-management-platform</Project>
+  <Overview>A production-ready prompt management platform for Unraid with React frontend, Node.js backend, and SQLite database.</Overview>
+  <Category>Productivity:Other</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/blackboxai/prompt-management-platform/main/docs/icon.png</Icon>
+  
+  <Config>
+    <Volume Type="Path" Display="Database Path" Target="/app/database" Default="/mnt/user/appdata/prompt-management/database" Mode="rw" Description="SQLite database storage"/>
+    <Volume Type="Path" Display="Uploads Path" Target="/app/uploads" Default="/mnt/user/appdata/prompt-management/uploads" Mode="rw" Description="User uploaded images"/>
+    <Volume Type="Path" Display="Thumbnails Path" Target="/app/thumbnails" Default="/mnt/user/appdata/prompt-management/thumbnails" Mode="rw" Description="Generated thumbnails"/>
+  </Config>
+  
+  <Ports>
+    <Port>
+      <HostPort>3000</HostPort>
+      <ContainerPort>3000</ContainerPort>
+      <Protocol>tcp</Protocol>
+      <Description>Web UI Port</Description>
+    </Port>
+  </Ports>
+  
+  <Environment>
+    <Variable>
+      <Name>DATABASE_PATH</Name>
+      <Value>/app/database/database.sqlite</Value>
+      <Mode/>
+      <Description>Path to SQLite database file</Description>
+    </Variable>
+    <Variable>
+      <Name>UPLOADS_PATH</Name>
+      <Value>/app/uploads</Value>
+      <Mode/>
+      <Description>Path to uploads directory</Description>
+    </Variable>
+    <Variable>
+      <Name>THUMBNAILS_PATH</Name>
+      <Value>/app/thumbnails</Value>
+      <Mode/>
+      <Description>Path to thumbnails directory</Description>
+    </Variable>
+    <Variable>
+      <Name>MAX_FILE_SIZE</Name>
+      <Value>10MB</Value>
+      <Mode/>
+      <Description>Maximum allowed file size for uploads</Description>
+    </Variable>
+    <Variable>
+      <Name>ALLOWED_IMAGE_TYPES</Name>
+      <Value>jpg,jpeg,png,webp,gif</Value>
+      <Mode/>
+      <Description>Comma-separated list of allowed image types</Description>
+    </Variable>
+    <Variable>
+      <Name>JWT_SECRET</Name>
+      <Value>your-secret-key</Value>
+      <Mode>password</Mode>
+      <Description>Secret key for JWT authentication</Description>
+    </Variable>
+    <Variable>
+      <Name>PORT</Name>
+      <Value>3000</Value>
+      <Mode/>
+      <Description>Port the application listens on</Description>
+    </Variable>
+    <Variable>
+      <Name>NODE_ENV</Name>
+      <Value>production</Value>
+      <Mode/>
+      <Description>Node environment</Description>
+    </Variable>
+    <Variable>
+      <Name>CORS_ORIGIN</Name>
+      <Value>*</Value>
+      <Mode/>
+      <Description>CORS allowed origins</Description>
+    </Variable>
+    <Variable>
+      <Name>RATE_LIMIT_MAX</Name>
+      <Value>100</Value>
+      <Mode/>
+      <Description>Max requests per window</Description>
+    </Variable>
+  </Environment>
+  
+  <DateInstalled/>
+  <DonateText/>
+</Container>

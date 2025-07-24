@@ -1,0 +1,20 @@
+{
+  "name": "prompt-management-platform",
+  "version": "1.0.0",
+  "description": "A production-ready prompt management platform for Unraid.",
+  "private": true,
+  "workspaces": [
+    "app/frontend",
+    "app/backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=app/backend\" \"npm run dev --workspace=app/frontend\"",
+    "build": "npm run build --workspace=app/frontend && npm run build --workspace=app/backend",
+    "start": "npm start --workspace=app/backend"
+  },
+  "author": "BLACKBOXAI",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
