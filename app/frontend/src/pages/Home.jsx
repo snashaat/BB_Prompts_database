@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { PlusIcon, SearchIcon, HeartIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/outline';
 
 const Home = () => {
   const { user } = useAuth();
@@ -23,7 +23,7 @@ const Home = () => {
             to="/prompts"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
           >
-            <SearchIcon className="h-5 w-5 mr-2" />
+            <MagnifyingGlassIcon className="h-5 w-5 mr-2" />
             Browse Prompts
           </Link>
           {user ? (
@@ -60,7 +60,7 @@ const Home = () => {
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mx-auto">
-                <SearchIcon className="h-6 w-6" />
+                <MagnifyingGlassIcon className="h-6 w-6" />
               </div>
               <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">
                 Smart Search

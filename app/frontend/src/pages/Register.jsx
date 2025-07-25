@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { UserIcon, LockClosedIcon, MailIcon } from '@heroicons/react/24/outline';
+import { UserIcon, LockClosedIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 const Register = () => {
   const { register: registerUser } = useAuth();
