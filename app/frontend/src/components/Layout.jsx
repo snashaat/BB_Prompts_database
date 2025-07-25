@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
-import { SunIcon, MoonIcon, UserIcon, LogoutIcon, PlusIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MoonIcon, UserIcon, ArrowLeftOnRectangleIcon, PlusIcon } from '@heroicons/react/24/outline';
 
 const Layout = ({ children }) => {
   const { user, logout } = useAuth();
@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
                       className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                       title="Logout"
                     >
-                      <LogoutIcon className="h-4 w-4" />
+                      <ArrowLeftOnRectangleIcon className="h-4 w-4" />
                     </button>
                   </div>
                 </>
